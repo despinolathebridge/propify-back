@@ -1,11 +1,9 @@
 package com.propify.challenge.service.impl;
 
-import com.propify.challenge.mapper.AddressMapper;
-import com.propify.challenge.service.AlertService;
 import com.propify.challenge.entity.Property;
-import com.propify.challenge.mapper.PropertyMapper;
-import com.propify.challenge.entity.PropertyReport;
+import com.propify.challenge.repository.PropertyRepository;
 import com.propify.challenge.service.PropertyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -13,39 +11,37 @@ import java.util.Collection;
 @Service
 public class PropertyServiceImpl implements PropertyService {
 
-    PropertyMapper propertyMapper;
+    private PropertyRepository repository;
 
-    AddressMapper addressMapper;
-
-    AlertService alertService;
+    @Autowired
+    public PropertyServiceImpl(PropertyRepository repository) {
+        this.repository = repository;
+    }
 
     public Collection<Property> search(String minRentPrice, String maxRentPrice) {
-        return propertyMapper.search(minRentPrice, maxRentPrice);
+        //TODO: implents this method
+        return null;
     }
 
     public Property findById(int id) {
-        return propertyMapper.findById(id);
+        //TODO: define exception classes
+        return this.repository.findById(id).orElseThrow();
     }
 
     public void insert(Property property) {
-        propertyMapper.insert(property);
-        System.out.println("CREATED: " + property.id);
+        //TODO: implents this method
     }
 
     public void update(Property property) {
-        propertyMapper.update(property);
-        System.out.println("UPDATED: " + property.id);
+        //TODO: implents this method
     }
 
     public void delete(int id) {
-        propertyMapper.delete(id);
-        System.out.println("DELETED: " + id);
-
-        alertService.sendPropertyDeletedAlert(id);
-        // TODO: Sending the alert should be non-blocking (asynchronous)
-        //  Extra points for only sending the alert when/if the transaction is committed
+        //TODO: implents this method
     }
 
+    //TODO: ask for this method
+    /*
     public PropertyReport propertyReport() {
         var allProperties = propertyMapper.search(null, null);
         var propertyReport = new PropertyReport();
@@ -63,5 +59,5 @@ public class PropertyServiceImpl implements PropertyService {
         // propertyReport.illinoisQuantity =
 
         return propertyReport;
-    }
+    }*/
 }
