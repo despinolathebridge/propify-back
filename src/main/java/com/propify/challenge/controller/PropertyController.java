@@ -1,7 +1,7 @@
 package com.propify.challenge.controller;
 
-import com.propify.challenge.Property;
-import com.propify.challenge.PropertyService;
+import com.propify.challenge.entity.Property;
+import com.propify.challenge.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,7 +52,7 @@ public class PropertyController {
         propertyService.delete(id);
     }
 
-    //TODO what is this?
+    //TODO: ask for this
     /*public PropertyReport report() {
         return propertyService.propertyReport();
     }*/

@@ -1,8 +1,17 @@
-package com.propify.challenge;
+package com.propify.challenge.service.impl;
+
+import com.propify.challenge.mapper.AddressMapper;
+import com.propify.challenge.service.AlertService;
+import com.propify.challenge.entity.Property;
+import com.propify.challenge.mapper.PropertyMapper;
+import com.propify.challenge.entity.PropertyReport;
+import com.propify.challenge.service.PropertyService;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-public class PropertyService {
+@Service
+public class PropertyServiceImpl implements PropertyService {
 
     PropertyMapper propertyMapper;
 
