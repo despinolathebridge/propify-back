@@ -1,0 +1,8 @@
+pending tasks:
+
+1) create controller model entities to return the answer in each controller
+2) add javax validation in the controller model entities
+3) ask about Report classes
+4) create each repository method to use in the service layer
+5) add jpa annotations to Address, Property and PropertyType entities
+6) add unit testing
